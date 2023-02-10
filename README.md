@@ -1,2 +1,1 @@
-# TI2
-Atividades TI2
+# Atividades TI2

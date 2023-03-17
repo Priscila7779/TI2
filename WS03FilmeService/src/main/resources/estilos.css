@@ -1,0 +1,25 @@
+form {
+    display: block;
+    margin-top: 0em;
+}
+label {
+    font-weight: bolder;
+}
+::placeholder, #inputLancamento {
+    color: lightskyblue !important;
+    opacity: 3;
+}
+::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+    color:  lightskyblue !important;
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+    color:  lightskyblue !important;
+    opacity:  3;
+}
+h1 {
+    text-align: center;
+}
+
+::after, ::before {
+    box-sizing: border-box;
+}

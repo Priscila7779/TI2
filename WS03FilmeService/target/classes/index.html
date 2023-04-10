@@ -1,57 +1,98 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Cadastro de filmes</title>
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
-        <link rel="stylesheet" href="estilos.css">
-    </head>
 
-    <body>
-        <h1>Cadastro de Filmes (CRUD)</h1>
-        <div class="container">
-            <form id="form-contato">
-                <div class="form-group row">
-                    <div class="col-sm-4">
-                        <label for="inputId">Id</label>
-                        <input type="text" class="form-control" id="inputId" placeholder="Id">
-                    </div>
-                    <div class="col-sm-8">
-                        <label for="inputNome">Nome</label>
-                        <input type="text" class="form-control" id="inputNome" required placeholder="Informe o nome do filme">
-                    </div>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de filmes</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="estilos.css">
+    <script type="text/javascript" src="script.js"></script>
+</head>
+
+<body>
+    <h1>Cadastro de Filmes (CRUD)</h1>
+    <div class="container">
+        <form class="form-cadastro" action="action" method="post" id="form-descricao">
+            <div class="form-group row">
+                <div class="col-sm-4">
+                    <label for="inputId">Id</label>
+                    <input class="form-control" type="text" id="inputId" placeholder="Id" value="" readonly >
                 </div>
-               <div class="form-goup row">
-                    <div class="col-sm-3">
-                        <label for="inputGenero">Gênero</label>
-                        <input type="text" class="form-control" id="inputGenero" required placeholder="Gênero">
-                    </div>
-                    <div class="col-sm-7">
-                        <label for="inputDiretor">Diretor</label>
-                        <input type="text" class="form-control" id="inputDiretor" required placeholder="Diretor">
-                    </div>
-                    <div class="col-sm-2">
-                        <label for="inputLancamento">Data de lançamento</label>
-                        <input type="date" class="form-control" id="inputLancamento">
-                    </div>
-               </div>
-               <div class="form-group row">
-                    <div class="col-sm-8">
-                        <input type="button" class="btn btn-success" id="btnInsert" value="Inserir">
-                        <input type="button" class="btn btn-warning" id="btnUpdate" value="Alterar">
-                        <input type="button" class="btn btn-danger" id="btnDelete" value="Excluir">
-                        <input type="button" class="btn btn-secondary" id="btnListar" value="Listar">
-                    </div>
-                    <div class="col-sm-2">
-                        <input type="number" class="form-control" required placeholder="Id">
-                    </div>
-                    <div class="col-sm-2">
-                        <input type="button" class="btn btn-warning" id="btnClear" value="Pesquisar">
-                    </div>
+                <div class="col-sm-8">
+                    <label for="inputNome">Nome</label>
+                    <input type="text" class="form-control" id="inputNome" required
+                        placeholder="Informe o nome do filme" value="">
                 </div>
-            </form>
+            </div>
+            <div class="form-goup row">
+                <div class="col-sm-3">
+                    <label for="inputGenero">Gênero</label>
+                    <input type="text" class="form-control" id="inputGenero" required placeholder="Gênero" value="">
+                </div>
+                <div class="col-sm-7">
+                    <label for="inputDiretor">Diretor</label>
+                    <input type="text" class="form-control" id="inputDiretor" required placeholder="Diretor" value="">
+                </div>
+                <div class="col-sm-2">
+                    <label for="inputLancamento">Data de lançamento</label>
+                    <input type="date" class="form-control" id="inputLancamento" value="">
+                </div>
+            </div>
+        </form>
+        <div class="form-group row">
+            <div class="col-sm-4">
+                <input type="button" class="btn btn-success" id="btnInsert" value="Inserir">
+                <input type="button" class="btn btn-warning" id="btnUpdate" value="Alterar">
+                <input type="button" class="btn btn-danger" id="btnDelete" value="Excluir">
+                <input type="button" class="btn btn-secondary" id="btnListar" value="Listar">
+            </div>
+            <div class="col-sm-3">
+                <select id="inputEstado" class="form-control">
+                    <option selected>Filtrar</option>
+                    <option>Id</option>
+                    <option>Nome</option>
+                    <option>Gênero</option>
+                    <option>Data Lançamento</option>
+                </select>
+            </div>
+            <div class="col-sm-3">
+                <input type="text" class="form-control" id="inputCity">
+            </div>
+            <div class="col-sm-2">
+                <button type="submit" class="btn btn-primary my-1">Pesquisar</button>
+            </div>
         </div>
-    </body>
+
+
+        <div id="listar" class="row">
+            <div class="col-sm-12">
+                <table id="grid-filmes" class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th scope="col" class="/filme/list/1">Id</th>
+                            <th scope="col" class="/filme/list/2">Nome</th>
+                            <th scope="col" class="/filme/list/3">Genêro</th>
+                            <th scope="col">Diretor</th>
+                            <th scope="col">Data de Lançamento</th>
+                        </tr>
+                    </thead>
+                    <tbody id="table-filmes">
+                        <tr>
+                            <td scope="row"></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</body>
+
 </html>
